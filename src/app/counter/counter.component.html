@@ -1,0 +1,8 @@
+<div class="input-group mb-3">
+    <!-- <p>{{value}}</p> -->
+    <input type="text" class="form-control" [(ngModel)]='value'>
+    <div class="input-group-append">
+        <button class="input-group-text" (click)='increment()' [disabled]='value === max'>+</button>
+        <button class="input-group-text" (click)='decrement()' [disabled]='value === min'>-</button>
+    </div>
+</div>

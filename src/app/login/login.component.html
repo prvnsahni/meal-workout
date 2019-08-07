@@ -1,0 +1,31 @@
+<form id="form_login" [formGroup]='loginForm'>
+    <div class="p-5">
+        <div class="row form-group">
+            <div class="col">
+                <label class="text-muted" for="userName">User Name</label>
+            </div>
+            <div class="col-8">
+                <input class="form-control" formControlName="userName" type="text">
+                <div *ngIf="!loginForm.get('userName').valid && loginForm.get('userName').touched">
+                    <small *ngIf="loginForm.get('userName').errors.required">User name is required</small>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col">
+                <label class="text-muted" for="password">Password</label>
+            </div>
+            <div class="col-8">
+                <input class="form-control"  formControlName="password" type="password">
+                <div *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+                    <small *ngIf="loginForm.get('password').errors.required">Password is required</small>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group float-right">
+            <button class="btn btn-success" [disabled]="!loginForm.valid" (click)='submit()'>Submit</button>
+        </div>
+        <br><br>
+        <small class="float-right" *ngIf="fail">Check name and password</small>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white">
+    <div class="container">
+        <a class="navbar-brand text-success" routerLink="/meals" >Meal Workout App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown" *ngIf='!this.dataService.loginStatus;'>
+                    <a routerLink="/login" [routerLinkActive]="['active']" class="nav-link" role="button">Sign In</a>
+                </li>
+                <li class="nav-item dropdown" *ngIf='this.dataService.loginStatus;'>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user text-white mr-3" aria-hidden="true"></i>userName
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Logout</a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

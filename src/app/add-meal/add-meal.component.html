@@ -1,0 +1,30 @@
+<div class="p-2 m-2">
+    <h3>Create Meal</h3>
+    <form [formGroup]='mealAddForm'>
+        <div class="row pt-2 form-group">
+            <div class="col">
+                <label for="">Meal Name</label>
+                <input class="form-control" type="text" formControlName='mealName'>
+                <div *ngIf="!mealAddForm.get('mealName').valid && mealAddForm.get('mealName').touched">
+                    <small *ngIf="mealAddForm.get('mealName').errors.required">required</small>
+                </div>
+            </div>
+            <div class="col">
+                <label for="">Food</label>
+                <a class="text-primary float-right" (click)='onAdd()'>+ Add Food</a>
+                <div formArrayName="food">
+                    <div class="row form-group" *ngFor="let foodControl of controls; let i = index">
+                        <div class="col-10">
+                            <input class="form-control" type="text" formControlName="{{i}}">
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-success" (click)="onRemove(i)">X</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-success" [disabled]='!mealAddForm.valid' (click)='onSubmit()'>Submit</button>
+                <button class="btn btn-muted ml-4" routerLink="/meals" >Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

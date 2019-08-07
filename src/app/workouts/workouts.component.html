@@ -1,0 +1,30 @@
+<div class="row container">
+    <div class="col">
+        <a class="float-right" [routerLink]="['add']" [routerLinkActive]="['active']">+ Add workout</a>
+    </div>
+</div>
+<div class="border">
+    <div class="row bg-light p-3 m-1">
+        <div class="col-2">Workout Name</div>
+        <div class="col-2 ">Type</div>
+        <div class="col-2 ">Date</div>
+        <div class="col-1 ">Reps</div>
+        <div class="col-1 ">Sets</div>
+        <div class="col-1 ">weight</div>
+        <div class="col-1 ">Distance</div>
+        <div class="col-1 ">Duration</div>
+        <div class="col-1 text-right">Action</div>
+    </div>
+    <div class="row p-3 m-1" *ngFor='let item of workoutDataList'>
+        <div class="col-2">{{item.workoutName}}</div>
+        <div class="col-2 ">{{item.type}}</div>
+        <div class="col-2 ">{{item.date | date: 'dd MMM yyyy'}}</div>
+        <div class="col-1 ">{{item.reps}}</div>
+        <div class="col-1 ">{{item.sets}}</div>
+        <div class="col-1 ">{{item.weight}}</div>
+        <div class="col-1 ">{{item.distance}}</div>
+        <div class="col-1 ">{{item.duration}}</div>
+        <div class="col-1 text-right">...</div>
+    </div>
+</div>
+<br>

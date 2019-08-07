@@ -1,0 +1,65 @@
+<h2>Create Workout</h2>
+<form [formGroup]='workoutForm'>
+  <div class="row form-group">
+    <div class="col-8">
+      Workout Name
+      <input class="form-control" formControlName='workoutName' type="text" placeholder="{{flag ? 'Strength workout' : 'Endurance workout'}}">
+      <div *ngIf="!workoutForm.get('workoutName').valid && workoutForm.get('workoutName').touched">
+        <small *ngIf="workoutForm.get('workoutName').errors.required">required</small>
+      </div> 
+    </div>
+  </div>
+  <div class="form-group">
+    type<br>
+    <a class="btn {{flag ? 'text-success' : ''}}" (click)="changeFlag()"><i class='fas'>&#xf44b;</i> Strength</a>
+    <a class="btn ml-4 {{!flag ? 'text-success' : ''}}" (click)="changeFlag()"><i class='fas'>&#xf70c;</i> Endurance</a>
+  </div>
+  <div class="row form-group" *ngIf='flag'>
+    <div class="col-8">
+      <div class="row">
+        <div class="col">
+          Reps
+          <app-counter formControlName="reps"></app-counter>
+          <div *ngIf="!workoutForm.get('reps').valid && workoutForm.get('reps').touched">
+            <small *ngIf="workoutForm.get('reps').errors.required">required</small>
+          </div> 
+        </div>
+        <div class="col">
+          Sets
+          <app-counter formControlName='sets'></app-counter>
+            <div *ngIf="!workoutForm.get('sets').valid && workoutForm.get('sets').touched">
+              <small *ngIf="workoutForm.get('sets').errors.required">required</small>
+            </div>
+          </div>
+        <div class="col">
+          Weight (kg)
+          <div class="mb-3">
+            <input type="text" class="form-control" formControlName='weight'>
+          </div>
+          <div *ngIf="!workoutForm.get('weight').valid && workoutForm.get('weight').touched">
+            <small *ngIf="workoutForm.get('weight').errors.required">required</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row form-group' *ngIf='!flag'>
+    <div class='col-4'>
+      Distance (km)
+      <input type="text" formControlName='distance' class="form-control">
+      <div *ngIf="!workoutForm.get('distance').valid && workoutForm.get('distance').touched">
+        <small *ngIf="workoutForm.get('distance').errors.required">required</small>
+      </div>
+    </div>
+    <div class='col-4'>
+      Duration (Minutes)
+      <input type="text" formControlName='duration' class="form-control">
+      <div *ngIf="!workoutForm.get('duration').valid && workoutForm.get('duration').touched">
+        <small *ngIf="workoutForm.get('duration').errors.required">required</small>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" (click)='onSubmit()'>Submit</button>
+  <button class="btn btn-muted ml-4" routerLink="/workouts" >Cancel</button>
+  <br>
+</form>
