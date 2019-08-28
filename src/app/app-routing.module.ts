@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MealsComponent } from './meals/meals.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
-import { AddWorkoutComponent } from './add-workout/add-workout.component';
-import { AddMealComponent } from './add-meal/add-meal.component';
+import { AddWorkoutComponent } from './workouts/add-workout/add-workout.component';
+import { AddMealComponent } from './meals/add-meal/add-meal.component';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 

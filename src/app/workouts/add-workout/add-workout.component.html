@@ -3,7 +3,8 @@
   <div class="row form-group">
     <div class="col-8">
       Workout Name
-      <input class="form-control" formControlName='workoutName' type="text" placeholder="{{flag ? 'Strength workout' : 'Endurance workout'}}">
+      <input class="form-control" formControlName='workoutName' type="text" pattern="[^~`!@#$%^()=;\s]*"
+      placeholder="{{flag ? 'Strength workout' : 'Endurance workout'}}">
       <div *ngIf="!workoutForm.get('workoutName').valid && workoutForm.get('workoutName').touched">
         <small *ngIf="workoutForm.get('workoutName').errors.required">required</small>
       </div> 

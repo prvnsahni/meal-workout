@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { WorkoutData } from './../services/workoutData';
+import { WorkoutData } from '../service/workoutData';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { workoutDataList } from '../services/workoutData';
+import { workoutDataList } from '../service/workoutData';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class AddWorkoutComponent implements OnInit {
   }
   onSubmit() {
     workoutDataList.push(this.workoutForm.value);
-    console.log(workoutDataList);
+    // console.log(workoutDataList);
     this.router.navigateByUrl('/workouts');
   }
   changeFlag() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
-import { Data, dataList } from '../services/data';
+import { Data, dataList } from '../service/data';
 import { Router } from '@angular/router';
 
 @Component({

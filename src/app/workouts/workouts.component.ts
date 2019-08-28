@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { workoutDataList, WorkoutData } from '../services/workoutData';
+import { workoutDataList, WorkoutData } from './service/workoutData';
+import { WorkoutDataService } from './service/workout-data.service';
 
 @Component({
   selector: 'app-workouts',
@@ -11,9 +12,11 @@ export class WorkoutsComponent implements OnInit {
   workoutDataList: WorkoutData[] = workoutDataList;
 
 
-  constructor() { }
+  constructor(public workoutDataService : WorkoutDataService) { }
 
   ngOnInit() {
+    console.log(this.workoutDataList);
+    
   }
 
 }

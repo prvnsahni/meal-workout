@@ -3,7 +3,16 @@
     <a class="float-right" [routerLink]="['add']" [routerLinkActive]="['active']">+ Add Meal</a>
   </div>
 </div>
-<div class="border">
+<ag-grid-angular 
+    #agGrid
+    style="width: 72.5vw; height: 68vh;" 
+    class="ag-theme-balham"
+    [rowData]="dataList" 
+    [columnDefs]="this.mealDataService.columnDefs"
+    rowSelection="multiple"
+    >
+</ag-grid-angular>
+<!-- <div class="border">
     <div class="row bg-light p-3 m-1">
         <div class="col-3">Meal Name</div>
         <div class="col-3">Food</div>
@@ -16,5 +25,5 @@
         <div class="col-3 text-center">{{item.date | date: 'dd MMM yyyy'}}</div>
         <div class="col-3 text-right"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
     </div>
-</div>
+</div> -->
 <br>

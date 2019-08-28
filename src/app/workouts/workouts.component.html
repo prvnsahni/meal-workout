@@ -3,7 +3,14 @@
         <a class="float-right" [routerLink]="['add']" [routerLinkActive]="['active']">+ Add workout</a>
     </div>
 </div>
-<div class="border">
+<ag-grid-angular 
+    style="width: 72.5vw; height: 68vh;" 
+    class="ag-theme-balham"
+    [rowData]="workoutDataList" 
+    [columnDefs]="this.workoutDataService.columnDefs"
+    >
+</ag-grid-angular>
+<!-- <div class="border">
     <div class="row bg-light p-3 m-1">
         <div class="col-2">Workout Name</div>
         <div class="col-2 ">Type</div>
@@ -26,5 +33,5 @@
         <div class="col-1 ">{{item.duration}}</div>
         <div class="col-1 text-right">...</div>
     </div>
-</div>
+</div> -->
 <br>
