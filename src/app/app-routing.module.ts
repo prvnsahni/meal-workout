@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { MealsComponent } from './meals/meals.component';
-import { WorkoutsComponent } from './workouts/workouts.component';
-import { AddWorkoutComponent } from './workouts/add-workout/add-workout.component';
-import { AddMealComponent } from './meals/add-meal/add-meal.component';
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './user-panel/main/main.component';
+import { MealsComponent } from './user-panel/main/meals/meals.component';
+import { AddMealComponent } from './user-panel/main/meals/add-meal/add-meal.component';
+import { WorkoutsComponent } from './user-panel/main/workouts/workouts.component';
+import { AddWorkoutComponent } from './user-panel/main/workouts/add-workout/add-workout.component';
+import { LoginComponent } from './user-panel/login/login.component';
 
 
 const routes: Routes = [
