@@ -6,6 +6,11 @@
 @import "~ag-grid-community/dist/styles/ag-grid.css";
 @import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 
+/* ng-select styles and themes */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+/* or   */
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
 *{
     margin: 0;
     padding: 0;
@@ -13,3 +18,8 @@
 small{
     color: red;
 }
+
+.cell-wrap-text {
+    white-space: normal !important;
+    overflow: visible !important;
+  }

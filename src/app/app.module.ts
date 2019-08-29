@@ -17,6 +17,7 @@ import { LoginComponent } from './user-panel/login/login.component';
 import { MainComponent } from './user-panel/main/main.component';
 import { CounterComponent } from './user-panel/counter/counter.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReactiveFormsModule,
     HttpClientModule,
     AgGridModule.withComponents([]),
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
