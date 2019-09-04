@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MainComponent } from './user-panel/main/main.component';
-import { MealsComponent } from './user-panel/main/meals/meals.component';
-import { AddMealComponent } from './user-panel/main/meals/add-meal/add-meal.component';
-import { WorkoutsComponent } from './user-panel/main/workouts/workouts.component';
-import { AddWorkoutComponent } from './user-panel/main/workouts/add-workout/add-workout.component';
-import { LoginComponent } from './user-panel/login/login.component';
+import { MealsComponent } from './user-panel/main/practice/meal-workout/meals/meals.component';
+import { AddMealComponent } from './user-panel/main/practice/meal-workout/meals/add-meal/add-meal.component';
+import { WorkoutsComponent } from './user-panel/main/practice/meal-workout/workouts/workouts.component';
+import { AddWorkoutComponent } from './user-panel/main/practice/meal-workout/workouts/add-workout/add-workout.component';
+import { LoginComponent } from './login/login.component';
 import { BasicUiComponent } from './admin-panel/basic-ui/basic-ui.component';
+import { HomeComponent } from './user-panel/main/home/home.component';
+import { UserPanelComponent } from './user-panel/user-panel.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 const routes: Routes = [
@@ -21,14 +24,20 @@ const routes: Routes = [
   // { path: 'login', component: LoginComponent },
   // { path: 'meals/add', component: AddMealComponent },
   // { path: 'workouts/add', component: AddWorkoutComponent },
-  { path: 'ui', component: BasicUiComponent},
   { path: '',
-    component: MainComponent,
+    component: AdminPanelComponent,
     children: [
+      { path: 'ui', component: BasicUiComponent},
+    ]
+  },
+  { path: '',
+    component: UserPanelComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
       { path: 'meals', component: MealsComponent},
       { path: 'meals/add', component: AddMealComponent },
       { path: 'workouts', component: WorkoutsComponent},
-      { path: 'workouts/add', component: AddWorkoutComponent }
+      { path: 'workouts/add', component: AddWorkoutComponent },
     ] 
   },
   { path: 'login', component: LoginComponent },

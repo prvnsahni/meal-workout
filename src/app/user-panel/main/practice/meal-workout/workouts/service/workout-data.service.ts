@@ -35,7 +35,7 @@ export class WorkoutDataService {
       cellClass: "no-border cell-wrap-text",
       autoHeight: true,
       resizable: true,
-      width: 350 
+      width: 250 
     },
     {
       headerName: 'Reps', 

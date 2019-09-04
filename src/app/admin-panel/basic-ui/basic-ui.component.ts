@@ -30,15 +30,12 @@ export class BasicUiComponent implements OnInit {
       return;
     }
     reader.onloadend = this._handleReaderLoaded.bind(this);
-    console.log(this);
     reader.readAsDataURL(files);
-    console.log(files);
-    
   }
   _handleReaderLoaded(e) {
-    let reader = e.target;
-    var base64result = 'data:image/png;base64, '+reader.result.substr(reader.result.indexOf(',') + 1);
-    document.getElementById('image').src = base64result;
+    // let reader = e.target;
+    // var base64result = 'data:image/png;base64, '+reader.result.substr(reader.result.indexOf(',') + 1);
+    document.getElementById('image').setAttribute( 'src', e.target.result);
   }
 
 }
