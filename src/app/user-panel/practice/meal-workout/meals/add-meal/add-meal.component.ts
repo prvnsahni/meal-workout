@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { Data, dataList } from '../service/data';
 import { Router } from '@angular/router';
+import { DataService } from '../../data-service/data.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
 
 @Component({
   selector: 'app-add-meal',
@@ -11,8 +13,11 @@ import { Router } from '@angular/router';
 export class AddMealComponent implements OnInit {
   mealAddForm;
   data: Data[] = dataList;
+  strData;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private dataService: DataService,
+              private sharedService: SharedService) { }
   ngOnInit() {
     this.mealAddForm = new FormGroup({
       mealName: new FormControl(null, Validators.required),
@@ -21,8 +26,14 @@ export class AddMealComponent implements OnInit {
     });
   }
   onSubmit() {
+    this.dataService.postData(this.mealAddForm.value)
+    .subscribe(postresp =>{
+      this.strData = postresp;
+      console.log(this.strData);
+      
+    });
     dataList.push(this.mealAddForm.value);
-    this.router.navigateByUrl('/meals');
+    this.router.navigateByUrl('/practice/meal-workout/meals');
   }
   onAdd() {
     this.mealAddForm.controls.food.push(new FormControl(null));
