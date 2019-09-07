@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basic-ui.component.css']
 })
 export class BasicUiComponent implements OnInit {
+  current = 80;
 
   constructor() { }
 

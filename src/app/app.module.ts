@@ -26,6 +26,9 @@ import { BannerComponent } from './user-panel/home/banner/banner.component';
 import { PorfolioComponent } from './user-panel/porfolio/porfolio.component';
 import { PracticeComponent } from './user-panel/practice/practice.component';
 import { MealWorkoutComponent } from './user-panel/practice/meal-workout/meal-workout.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +62,8 @@ import { MealWorkoutComponent } from './user-panel/practice/meal-workout/meal-wo
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
+    NgCircleProgressModule.forRoot(),
+    RoundProgressModule
   ],
   providers: [  ],
   bootstrap: [AppComponent]
