@@ -1,33 +1,64 @@
 <!-- You can now use it in app.component.html -->
 <div class="row">
-  <div class="col-4">
+  <div class="col-3">
     <circle-progress
-    [percent]="80"
-    [radius]="100"
-    [outerStrokeWidth]="12"
-    [outerStrokeColor]="'#78C000'"
-    [animation]="true"
-    [animationDuration]="600"
-    [title]="Progress"
+      [percent]="80"
+      [radius]="100"
+      [outerStrokeColor]="'#78C000'"
+      [animation]="true"
+      [animationDuration]="600"
+      [title]="Progress"
+      space= "4"
+      maxPercent= "100"
+      unitsFontSize= "14"
+      unitsFontWeight= "600"
+      outerStrokeWidth= "8"
+      innerStrokeWidth= "2"
+      titleFontSize= "28"
+      titleFontWeight= "600"
+      subtitleFontSize= "12"
+      subtitleFontWeight= "600"
   ></circle-progress>
   </div>
-  <div class="col-4">
+  <div class="col-3">
     <round-progress
-    [current]=current
-    [max]="max"
-    [color]="'#45ccce'"
-    [background]="'#eaeaea'"
-    [radius]="125"
-    [stroke]="20"
-    [semicircle]="true"
-    [rounded]="true"
-    [clockwise]="false"
-    [responsive]="false"
-    [duration]="800"
-    [animation]="'easeInOutQuart'"
-    [animationDelay]="0"
-    (onRender)="doSomethingWithCurrentValue($event)"
+      [current]=current
+      [max]="max"
+      [color]="'#45ccce'"
+      [background]="'#eaeaea'"
+      [radius]="125"
+      [stroke]="12"
+      [semicircle]="true"
+      [rounded]="true"
+      [clockwise]="false"
+      [responsive]="false"
+      [duration]="800"
+      [animation]="'easeInOutQuart'"
+      [animationDelay]="0"
+      (onRender)="doSomethingWithCurrentValue($event)"
     ></round-progress>
+  </div>
+  <div class="col-3">
+    <circle-progress
+      [percent]="progress"
+      [radius]="100"
+      [outerStrokeWidth]="10"
+      [innerStrokeWidth]="10"
+      [space] = "-10"
+      [outerStrokeColor]="'#4882c2'"
+      [innerStrokeColor]="'#e7e8ea'"
+      [titleFontSize]= "24"
+      [unitsFontSize]= "24"
+      [showSubtitle] = "true"
+      [title]="myProgress"
+      [animation]="true"
+      [animationDuration]="600"
+      [startFromZero]="false"
+      [responsive]="true"
+    ></circle-progress>
+  </div>
+  <div class="col-3">
+
   </div>
 </div>
 
