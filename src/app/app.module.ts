@@ -28,6 +28,7 @@ import { PracticeComponent } from './user-panel/practice/practice.component';
 import { MealWorkoutComponent } from './user-panel/practice/meal-workout/meal-workout.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { CodeComponent } from './user-panel/practice/code/code.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
     BannerComponent,
     PorfolioComponent,
     PracticeComponent,
-    MealWorkoutComponent
+    MealWorkoutComponent,
+    CodeComponent
   ],
   imports: [
     BrowserModule,
