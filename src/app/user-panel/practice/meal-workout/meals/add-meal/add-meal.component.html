@@ -10,7 +10,6 @@
                 </div>
             </div>
             <div class="col">
-                <label for="">Food</label>
                 <a class="text-primary float-right" (click)='onAdd()'>+ Add Food</a>
                 <div formArrayName="food">
                     <div class="row form-group" *ngFor="let foodControl of controls; let i = index">
